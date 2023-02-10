@@ -1,0 +1,24 @@
+<!-- sldsValidatorIgnore -->
+<template>
+    <lightning-quick-action-panel header="Quotation">
+        <div class="slds-box">
+            <lightning-input name="ToEmailAddress" label="To" type="text" placeholder="Enter Email Address..." value={toAddress} onchange={handleChange} required></lightning-input>
+            <lightning-input name="CCEmailAddress" label="CC" type="text" placeholder="Enter Email Address..." value={ccAddress} onchange={handleChange}></lightning-input>
+
+            <lightning-input name="Subject" label="Subject" type="text" placeholder="Enter Subject..." value={subject} onchange={handleChange} required></lightning-input>
+
+            <lightning-textarea class="textArea" label="Body" value={body} onchange={handleChange}></lightning-textarea>
+        </div>
+        <div slot="footer">
+            <lightning-button label="Cancel" variant="neutral" onclick={handleCancel}></lightning-button>
+            &nbsp;
+    <lightning-button label="Send Quote" variant="brand" onclick={handleClick}></lightning-button>
+</div>
+<template if:true={showSpinner}>
+    <div class="slds-theme_shade">
+        <lightning-spinner alternative-text="Loading" variant="brand"></lightning-spinner>
+    </div>
+</template>
+</lightning-quick-action-panel>
+    
+</template>
